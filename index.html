@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>论文引用格式转换器</title>
+    <link rel="stylesheet" href="./src/styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <header class="topbar">
+        <div class="brand-block">
+          <h1>论文引用格式转换器</h1>
+          <p class="lede">粘贴GB/T 7714-2015格式转换为《法学引注手册》格式</p>
+        </div>
+        <div class="status-pill" id="status">等待输入</div>
+      </header>
+
+      <section class="tool-surface" aria-label="文献转换工作区">
+        <div class="toolbar" aria-label="转换操作">
+          <button id="convertBtn" type="button" class="primary">转换</button>
+          <button id="normalizeBtn" type="button">规范化</button>
+          <button id="numberBtn" type="button">编号/排序</button>
+          <button id="copyBtn" type="button">复制</button>
+          <button id="clearBtn" type="button" class="ghost">清空</button>
+        </div>
+
+        <div class="workspace">
+          <div class="pane input-pane">
+            <div class="pane-header">
+              <label for="source">原始引用</label>
+              <span id="sourceCount">0 行</span>
+            </div>
+            <textarea
+              id="source"
+              spellcheck="false"
+              placeholder="刘颖.物权期待权排除强制执行规则之再审思[J].当代法学,2023(01):11-12."
+            ></textarea>
+          </div>
+
+          <div class="pane output-pane">
+            <div class="pane-header">
+              <label for="result">转换结果</label>
+              <span id="resultCount">0 条</span>
+            </div>
+            <textarea id="result" spellcheck="false" readonly></textarea>
+          </div>
+        </div>
+      </section>
+
+      <section class="details" aria-label="解析明细">
+        <div class="details-header">
+          <h2>解析明细</h2>
+          <span id="issueCount">0 个提示</span>
+        </div>
+        <div id="detailsList" class="details-list"></div>
+      </section>
+    </main>
+
+    <script type="module" src="./src/main.js"></script>
+  </body>
+</html>
